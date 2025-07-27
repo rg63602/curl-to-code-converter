@@ -1,0 +1,5 @@
+{
+  "name": "cURL to Code Converter",
+  "description": "An intelligent tool that converts cURL commands into clean, production-ready code snippets for popular backend frameworks using the Gemini API.",
+  "requestFramePermissions": []
+}
