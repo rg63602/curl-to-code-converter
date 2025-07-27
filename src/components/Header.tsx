@@ -9,7 +9,7 @@ interface HeaderProps {
     onThemeChange: (theme: Theme) => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ theme, onThemeChange }) => {
+export const Header: React.FC<HeaderProps> = ({ theme, onThemeChange }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-30 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-700">
       <div className="container mx-auto px-4 lg:px-6 flex items-center justify-between">

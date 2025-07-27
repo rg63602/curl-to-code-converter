@@ -7,7 +7,7 @@ import { Footer } from './components/Footer';
 import { Toast } from './components/Toast';
 import { generateCodeFromCurl } from './services/geminiService';
 import { Language, Framework, GenerationMode, Theme, ToastInfo, ToastType } from './types';
-import { ScrollUpIcon } from './components/Icon';
+import { ScrollUpIcon } from '../assets/Icon';
 import { UI_TEXT, CONFIG } from './constants';
 
 interface GeneratedSnippet {

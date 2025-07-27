@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Editor from 'react-simple-code-editor';
 import { Language, Framework, ToastType } from '../types';
 import { getHighlightJsLanguage } from '../utils/highlighting';
-import { CloseIcon, CopyIcon, CheckIcon, DownloadIcon, SpinnerIcon } from './Icon';
+import { CloseIcon, CopyIcon, CheckIcon, DownloadIcon, SpinnerIcon } from '../../assets/Icon';
 import { UI_TEXT, CONFIG } from '../constants';
 
 declare const hljs: any;
@@ -32,7 +32,7 @@ const getFileName = (language: Language, framework: Framework): string => {
     }
   };
 
-export const CodeModal: React.FC<CodeModalProps> = ({ isOpen, onClose, code, language, framework, showToast }) => {
+export const CodeModal: React.FC<CodeModalProps> = ({ isOpen, onClose, code, language, framework, showToast }: CodeModalProps) => {
   const [copied, setCopied] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   
@@ -138,12 +138,8 @@ export const CodeModal: React.FC<CodeModalProps> = ({ isOpen, onClose, code, lan
               highlight={code => hljs.highlight(code, { language: getHighlightJsLanguage(language) }).value}
               readOnly
               padding={16}
-              className="react-simple-code-editor-container"
-              style={{
-                fontFamily: '"Fira Code", "Fira Mono", "Consolas", "Menlo", monospace',
-                fontSize: '0.875rem',
-                lineHeight: '1.5rem',
-              }}
+              style={undefined}
+              className="react-simple-code-editor-container editor-custom-style"
           />
         </div>
       </div>

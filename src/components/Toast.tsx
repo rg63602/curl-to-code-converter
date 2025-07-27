@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { CheckIcon, ErrorIcon, CloseIcon } from './Icon';
+import { CheckIcon, ErrorIcon, CloseIcon } from '../../assets/Icon';
 import { ToastInfo } from '../types';
 import { CONFIG, UI_TEXT } from '../constants';
 

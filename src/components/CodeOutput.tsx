@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Editor from 'react-simple-code-editor';
 import { Language, Framework, GenerationMode, ToastType } from '../types';
-import { CopyIcon, DownloadIcon, CheckIcon, ExpandIcon, InfoIcon, SpinnerIcon } from './Icon';
+import { CopyIcon, DownloadIcon, CheckIcon, ExpandIcon, InfoIcon, SpinnerIcon } from '../../assets/Icon';
 import { Spinner } from './Spinner';
 import { CodeModal } from './CodeModal';
 import { getHighlightJsLanguage } from '../utils/highlighting';
@@ -39,7 +39,7 @@ const getFileName = (language: Language, framework: Framework): string => {
   }
 };
 
-export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, generationMode, isLoading, error, showToast }) => {
+export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, generationMode, isLoading, error, showToast }: CodeOutputProps) => {
   const [copied, setCopied] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -138,12 +138,8 @@ export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, generationMode,
                         highlight={code => hljs.highlight(code, { language: getHighlightJsLanguage(language) }).value}
                         readOnly
                         padding={16}
-                        className="react-simple-code-editor-container"
-                        style={{
-                        fontFamily: '"Fira Code", "Fira Mono", "Consolas", "Menlo", monospace',
-                        fontSize: '0.875rem',
-                        lineHeight: '1.5rem',
-                        }}
+                        style={undefined}
+                        className="react-simple-code-editor-container editor-custom-style"
                     />
                 </div>
             )}

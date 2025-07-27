@@ -1,0 +1,6 @@
+.editor-custom-style {
+  font-family: "Fira Code", "Fira Mono", "Consolas", "Menlo", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  caret-color: var(--caret-color, #1e293b);
+} 

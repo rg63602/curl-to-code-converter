@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitHubIcon, BugIcon, PortfolioIcon, LinkedInIcon } from './Icon';
+import { GitHubIcon, BugIcon, PortfolioIcon, LinkedInIcon } from '../../assets/Icon';
 import { EXTERNAL_LINKS, UI_TEXT } from '../constants';
 
 export const Footer: React.FC = () => {

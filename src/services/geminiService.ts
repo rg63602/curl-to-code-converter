@@ -3,11 +3,14 @@ import { GoogleGenAI } from "@google/genai";
 import { Language, Framework } from '../types';
 import { CLIENT_LIBRARIES, API, UI_TEXT } from '../constants';
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
+
+console.log('import.meta.env:', import.meta.env);
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+if (!apiKey || typeof apiKey !== 'string') {
+    throw new Error("VITE_GEMINI_API_KEY environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: apiKey as string });
 
 const getPrompt = (curlCommand: string, language: Language, framework: Framework): string => {
   const isClientLibrary = CLIENT_LIBRARIES.includes(framework);
@@ -73,6 +76,9 @@ export const generateCodeFromCurl = async (
       model,
       contents: prompt,
     });
+    if (!response.text) {
+      throw new Error("No response text from Gemini API");
+    }
     return response.text;
   } catch (error) {
     console.error("Error calling Gemini API:", error);
@@ -112,6 +118,9 @@ export const formatCurlCommand = async (curlCommand: string): Promise<string> =>
         temperature: API.GEMINI_FORMATTING_TEMPERATURE,
       }
     });
+    if (!response.text) {
+      throw new Error("No response text from Gemini API (formatting)");
+    }
     return response.text.trim();
   } catch (error) {
     console.error("Error calling Gemini API for formatting:", error);

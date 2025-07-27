@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Editor from 'react-simple-code-editor';
 import { Language, Framework, HttpMethod, GenerationMode, ToastType } from '../types';
 import { FRAMEWORK_OPTIONS, DEFAULT_CURL_COMMANDS, CLIENT_LIBRARIES, UI_TEXT, CONFIG } from '../constants';
-import { ZapIcon, CurlyBracesIcon, CopyIcon, CheckIcon, TrashIcon } from './Icon';
+import { ZapIcon, CurlyBracesIcon, CopyIcon, CheckIcon, TrashIcon } from '../../assets/Icon';
 import { formatCurlCommand } from '../services/geminiService';
 
 declare const hljs: any;
@@ -15,7 +15,7 @@ interface InputFormProps {
   showToast: (message: string, type: ToastType, duration?: number, description?: string) => void;
 }
 
-export const InputForm: React.FC<InputFormProps> = ({ onConvert, isLoading, generationMode, onGenerationModeChange, showToast }) => {
+export const InputForm: React.FC<InputFormProps> = ({ onConvert, isLoading, generationMode, onGenerationModeChange, showToast }: InputFormProps) => {
   const [curlCommand, setCurlCommand] = useState<string>(DEFAULT_CURL_COMMANDS.POST);
   const [activeMethod, setActiveMethod] = useState<HttpMethod>(HttpMethod.POST);
   const [language, setLanguage] = useState<Language>(Language.JAVA);
@@ -232,13 +232,7 @@ export const InputForm: React.FC<InputFormProps> = ({ onConvert, isLoading, gene
             onValueChange={code => setCurlCommand(code)}
             highlight={code => hljs.highlight(code, { language: 'bash' }).value}
             padding={16}
-            className="react-simple-code-editor-container"
-            style={{
-              fontFamily: '"Fira Code", "Fira Mono", "Consolas", "Menlo", monospace',
-              fontSize: '0.875rem',
-              lineHeight: '1.5rem',
-              caretColor: 'var(--caret-color, #1e293b)',
-            }}
+            className="react-simple-code-editor-container editor-custom-style"
             textareaId="curl-command"
             placeholder={UI_TEXT.CURL_INPUT_PLACEHOLDER}
             spellCheck="false"

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Theme } from '../types';
-import { SunIcon, MoonIcon } from './Icon';
+import { SunIcon, MoonIcon } from '../../assets/Icon';
 import { UI_TEXT } from '../constants';
 
 interface ThemeSwitcherProps {
