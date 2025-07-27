@@ -39,7 +39,7 @@ const getFileName = (language: Language, framework: Framework): string => {
   }
 };
 
-export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, generationMode, isLoading, error, showToast }: CodeOutputProps) => {
+export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, isLoading, error, showToast }: CodeOutputProps) => {
   const [copied, setCopied] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -149,7 +149,7 @@ export const CodeOutput: React.FC<CodeOutputProps> = ({ snippet, generationMode,
                      {!isLoading && error && (
                          <div className="text-red-500 dark:text-red-400">
                              <p className="font-semibold text-lg">{UI_TEXT.ERROR_TITLE}</p>
-                             <p className="text-sm mt-1">{error}</p>
+                             {/* <p className="text-sm mt-1">{error}</p> */}
                          </div>
                      )}
                      {!isLoading && !error && !snippet && (

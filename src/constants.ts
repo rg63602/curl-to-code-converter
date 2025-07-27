@@ -177,8 +177,8 @@ export const FUNKY_LOADING_MESSAGES = [
 ];
 
 export const EXTERNAL_LINKS = {
-  GITHUB_SOURCE: 'https://github.com/google/generative-ai-docs/tree/main/demos/curl-to-code',
-  GITHUB_ISSUES: 'https://github.com/google/generative-ai-docs/issues',
-  LINKEDIN_PROFILE: 'https://www.linkedin.com/in/your-profile-here', // Replace with your actual profile
-  PORTFOLIO_URL: 'https://your-portfolio.com', // Replace with your portfolio URL
+  GITHUB_SOURCE: 'https://github.com/rg63602/curl-to-code-converter',
+  GITHUB_ISSUES: 'https://github.com/rg63602/curl-to-code-converter/issues',
+  LINKEDIN_PROFILE: 'https://www.linkedin.com/in/rishabh-kumar-g/',
+  PORTFOLIO_URL: 'https://github.com/rg63602',
 };

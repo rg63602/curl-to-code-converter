@@ -48,9 +48,9 @@ export const Toast: React.FC<ToastProps> = ({ toastInfo, onClose }) => {
         <div className="flex-grow">
           <p className={`text-sm font-semibold ${titleClasses}`}>{title}</p>
           <p className="text-sm text-slate-600 dark:text-slate-300 mt-1">{toastInfo.message}</p>
-          {toastInfo.description && (
+          {/* {toastInfo.description && (
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">{toastInfo.description}</p>
-          )}
+          )} */}
         </div>
         <div className="flex-shrink-0">
           <button 

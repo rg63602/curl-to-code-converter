@@ -12,7 +12,9 @@ A web application that converts cURL commands into code snippets in various prog
 
 ## Demo
 
-> _Add a link or screenshot here if you have a live demo or preview._
+[![Watch the Demo Video](https://img.youtube.com/vi/gVKddAblvug/hqdefault.jpg)](https://www.youtube.com/shorts/gVKddAblvug)
+
+[Watch the demo video on YouTube Shorts](https://www.youtube.com/shorts/gVKddAblvug)
 
 ## Getting Started
 
@@ -35,10 +37,11 @@ A web application that converts cURL commands into code snippets in various prog
    ```
 
 3. **Set up environment variables:**
-   - Create a `.env.local` file in the root directory.
-   - Add your Gemini API key:
+   - Create a `.env` file in the root directory.
+   - Add your Gemini API key and (optionally) the port:
      ```
-     GEMINI_API_KEY=your_gemini_api_key_here
+     VITE_GEMINI_API_KEY=your_gemini_api_key_here
+     VITE_PORT=4200 # or any port you prefer (default is 5173)
      ```
 
 4. **Run the app locally:**
@@ -47,7 +50,7 @@ A web application that converts cURL commands into code snippets in various prog
    ```
 
 5. **Open your browser:**
-   - Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal).
+   - Visit [http://localhost:4200](http://localhost:4200) (or the port you set in your `.env` file, or the one shown in your terminal).
 
 ## Usage
 
@@ -60,14 +63,15 @@ A web application that converts cURL commands into code snippets in various prog
 
 ```
 curl-to-code-converter/
-├── components/         # React components (UI)
-├── services/           # API and Gemini service logic
-├── utils/              # Utility functions (e.g., syntax highlighting)
-├── App.tsx             # Main application component
-├── constants.ts        # App-wide constants
-├── types.ts            # TypeScript types
-├── index.tsx           # App entry point
-├── vite.config.ts      # Vite configuration
+├── src/
+│   ├── components/         # React components (UI)
+│   ├── services/           # API and Gemini service logic
+│   ├── utils/              # Utility functions (e.g., syntax highlighting)
+│   ├── App.tsx             # Main application component
+│   ├── constants.ts        # App-wide constants
+│   ├── types.ts            # TypeScript types
+│   └── index.tsx           # App entry point
+├── vite.config.ts          # Vite configuration
 └── ...
 ```
 
